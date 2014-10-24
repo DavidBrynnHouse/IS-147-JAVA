@@ -1,0 +1,22 @@
+/*David House
+ *IS147
+ *Write a program that receives a character and
+ *displays its Unicode.
+ */
+ import java.util.Scanner;
+ 
+ public class CharToUnicode
+ {
+   public static void main(String[] args)
+   {
+      Scanner scan = new Scanner(System.in);
+      
+      System.out.print("Enter The character to be converted into unicode: ");
+      String userStringInput = scan.nextLine();
+      char userCharacterInput = userStringInput.charAt(0);
+      
+      System.out.print("The character who's value you entered is equal to " + (int)(userCharacterInput));
+      
+   }
+ 
+ }
