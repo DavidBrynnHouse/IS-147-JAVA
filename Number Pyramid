@@ -1,0 +1,42 @@
+/*Write a program that prompts the user to enter an integer from
+ *1 to 15 and displays a pyramid
+ *David House
+ *IS147
+ */
+import java.util.Scanner;
+
+public class NumberPyramidDBH
+{
+  public static void main(String[] args) 
+  {
+  
+    Scanner input = new Scanner(System.in);
+    
+    System.out.print("Enter the number of lines (1 through 15): ");
+    int numberOfLines = input.nextInt();
+  
+    while (numberOfLines < 1 || numberOfLines > 15)
+    {
+      System.out.print("The number you entered was not in the desired range\nEnter a number from 1 through 15: ");
+      numberOfLines = input.nextInt();
+    }
+       
+    for (int row = 1; row <= numberOfLines; row++) 
+     {
+        for (int column = numberOfLines - row; column > 0; column--)
+            System.out.print("   ");
+                                                                           
+         for (int num = row; num >= 1; num--)
+                                                                           
+           System.out.print((num >= 10) ? " " + num : "  " + num);
+
+                                                                       
+      for (int num = 2;  num <= row; num++)
+        System.out.print((num >= 10) ? " " + num : "  " + num);
+
+      System.out.println();
+      
+      
+    }//end of outer for loop
+  }//end of main method
+}//end of class
