@@ -1,0 +1,39 @@
+/*David House
+ *IS147
+ *Write
+ *a program that reads an unspecified number of integers, determines how many
+ *positive and negative values have been read, and computes the total and average of
+ *the input values (not counting zeros). Your program ends with the input 0. Display
+ *the average as a floating-point number. 
+ */
+ import java.util.*;
+ import java.text.DecimalFormat;
+
+public class SumOfNumDBH
+{
+  public static void main(String[] args)
+  {
+  Scanner scan = new Scanner(System.in);
+  DecimalFormat fmt = new DecimalFormat ("0.##");
+   
+  int count = -1;
+  int num;
+  int sum = 0;
+  double avg;
+      
+  System.out.print("The numbers entered will be added counted and averaged.");
+   do
+   {
+      count++;
+      System.out.print("\nEnter an integer (0 will terminate the sequence): ");
+      num = scan.nextInt();
+      sum += num;
+   }while (num != 0);
+   
+  avg = (double)sum / count; 
+  if(count != 0)
+   System.out.print("the sum is: " + sum + "\nThe average is: " + fmt.format(avg) + "\nAnd the count is: " + count);
+  else
+   System.out.print("No values entered");
+  }
+}
