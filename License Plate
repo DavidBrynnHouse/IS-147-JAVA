@@ -1,0 +1,38 @@
+/*David House
+ *IS147
+ *Assume a vehicle plate number consists of three
+ *uppercase letters followed by four digits. Write a program to generate a plate
+ *number. 
+ */
+
+
+import java.util.Random;
+
+public class LicensePlateDBH
+{
+    public static void main(String[] args)
+    {
+        Random rand = new Random();
+        String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        
+        char letterOne = alphabet.charAt(rand.nextInt(26));
+        char letterTwo = alphabet.charAt(rand.nextInt(26));
+        char letterThree = alphabet.charAt(rand.nextInt(26));
+        int numOne = rand.nextInt(10);
+        int numTwo = rand.nextInt(10);
+        int numThree = rand.nextInt(10);
+        int numFour = rand.nextInt(10);
+        
+        System.out.print(letterOne);
+        System.out.print(letterTwo);
+        System.out.print(letterThree);
+        System.out.print(numOne);
+        System.out.print(numTwo);
+        System.out.print(numThree);
+        System.out.print(numFour);
+    }
+    
+}
+
+
+
