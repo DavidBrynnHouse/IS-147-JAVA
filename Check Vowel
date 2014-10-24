@@ -1,0 +1,37 @@
+/*Assume letters
+A, E, I, O, and U
+as the vowels.
+Write a program that prompts the user to enter a string and displays the number
+of vowels and consonants in the string.
+David House
+IS147
+*/
+import java.util.Scanner;
+
+public class VowelCheckerDBH
+{
+   public static void main(String[] args)
+   {
+   Scanner scan = new Scanner(System.in);
+   
+   System.out.print("Enter a String to find how many vowels and consonants it contains: ");
+   String userString = scan.nextLine();
+   
+   int countV = 0;
+   int countC = 0;
+   
+   for(int i = 0; i < userString.length(); i++)
+
+   if(userString.charAt(i) > 'a' && userString.charAt(i) < 'z' || userString.charAt(i) > 'A' && userString.charAt(i) < 'Z')
+   {
+      if (userString.charAt(i).equalsIgnoreCase('A') ||userString.charAt(i).equalsIgnoreCase('E') || userString.charAt(i).equalsIgnoreCase('I')
+                                                                      || userString.charAt(i).equalsIgnoreCase('O') || userString.charAt(i).equalsIgnoreCase('U'))
+   
+         countV++;
+      else
+         countC++;
+   }
+   else
+   System.out.print("Invalid input");
+   }
+}
