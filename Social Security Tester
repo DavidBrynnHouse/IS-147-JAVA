@@ -1,0 +1,48 @@
+/*David House
+ *IS 147
+ *Write a program that prompts the user to enter a Social Security
+ *number in the format DDD-DD-DDDD, where D is a digit. Your program should
+ *check whether the input is valid. 
+ */
+import java.util.Scanner;
+
+public class SocialSecurityDBH 
+{
+    public static void main(String[] args)
+    {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.print("Enter the Social Security Number in the format ###-##-####: ");
+        String ssn = scan.nextLine();
+        
+        
+        char firstDigit = ssn.charAt(0);  
+            char secondDigit = ssn.charAt(1);  
+            char thirdDigit = ssn.charAt(2);  
+            char fourthDigit = ssn.charAt(4);  
+            char fifthDigit = ssn.charAt(5);  
+            char sixthDigit = ssn.charAt(7);  
+            char seventhDigit = ssn.charAt(8);  
+            char eigthDigit = ssn.charAt(9);  
+            char ninthDigit = ssn.charAt(10);    
+            char hyphen1 = ssn.charAt(3);  
+            char hyphen2 = ssn.charAt(6);
+        if (ssn.length() == 11)
+        {
+            if   (Character.isDigit(firstDigit) && Character.isDigit(secondDigit)  
+                 && Character.isDigit(thirdDigit) && Character.isDigit(fourthDigit)  
+                 && Character.isDigit(fifthDigit) && Character.isDigit(sixthDigit)  
+                 && Character.isDigit(seventhDigit) && Character.isDigit(eigthDigit)  
+                 && Character.isDigit(ninthDigit) && (hyphen1 == '-' && hyphen2 == '-'))
+            {
+                System.out.print("The entered Social Security Number is valid.");           
+            } 
+            else
+            {
+                System.out.print("The entered Social Security Number is not valid.");    
+            }
+                
+                
+        }     
+    }
+}
