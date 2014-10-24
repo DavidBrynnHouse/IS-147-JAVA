@@ -1,0 +1,30 @@
+/*IS147
+ *David House
+ *Write a program that prompts the user to enter
+ *the length from the center of a pentagon to a vertex and computes the area of the
+ *pentagon
+ */
+ 
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
+public class AreaOfAPentagonDBH
+{
+  public static void main (String[] args)
+  {
+     
+     Scanner scan = new Scanner (System.in);
+      
+     System.out.print("Enter the length of the line from the center to a vertex on your pentagon: ");
+     int pentagonRadius = scan.nextInt();
+     
+     double pentagonSide = 2 * pentagonRadius * Math.sin(Math.PI / 5);
+     
+     double pentagonArea = (5 * Math.pow(pentagonSide , 2)) / (4 * Math.tan(Math.PI / 5));
+     
+     DecimalFormat fmt = new DecimalFormat ("0.#");
+     
+     System.out.print("The area of the pentagon is " + fmt.format(pentagonArea));
+  }
+  
+}
