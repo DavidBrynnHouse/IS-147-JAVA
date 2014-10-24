@@ -1,0 +1,60 @@
+/*In addition to the instructions in the book also use a Do-While loop 
+for asking if the user wants to do another set of amounts.
+Also add % and $ formatting to output columns.
+Write a pro-
+gram that lets the user enter the loan amount and loan period in number of years
+and displays the monthly and total payments for each interest rate starting from
+5% to 8%, with an increment of 1/8
+*David House
+*IS147
+*/
+
+import java.util.Scanner;
+import java.text.*;
+
+public class LoanCalculatorDBH {
+  // Main method
+  public static void main(String[] args) {
+   Scanner input = new Scanner(System.in);//a scanner for amounts
+   Scanner again = new Scanner(System.in);// a scanner for the do again string
+   
+   //create objects to format % and $ output later
+   NumberFormat percent = NumberFormat.getPercentInstance();
+   percent.setMaximumFractionDigits(3);
+   NumberFormat dollars = NumberFormat.getCurrencyInstance();
+   DecimalFormat fmt = new DecimalFormat ("0.###");
+   String another="";// to hold the while condition later
+   //create a do loop so the user can redo their loans
+   do
+   {
+   
+    // Prompt for and accept the user's loan amount
+   System.out.print("Enter the dollar amount of your loan: ");
+   double loanAmount = input.nextDouble();
+    
+    // Prompt for and accept the number of years for the loan
+   System.out.print("Enter the number of years for the loan: ");
+   int loanDuration = input.nextInt();
+
+    // Print the header to include "Interest Rate", "Monthly Payment", "Total Payment"
+    System.out.println("Interest Rate\tMonthly Payment\t Total Payment");
+    // for loop to step through the annualInterestRate from 5.0-8.0 by 1/8
+    for (double annualInterestRate = .05; annualInterestRate <= .08125 ; annualInterestRate += .00125)
+     {
+      // Obtain monthly interest rate
+      double monthlyInterestRate = annualInterestRate / 12;
+      // Compute mortgage
+      double monthlyPayment = loanAmount * monthlyInterestRate /
+        (1 - (Math.pow(1 / (1 + monthlyInterestRate), loanDuration * 12)));
+      double totalPayment = monthlyPayment * loanDuration * 12;
+
+      // Display results 
+      System.out.println(percent.format(annualInterestRate)+"\t\t"+ dollars.format(monthlyPayment)+"\t\t "+ dollars.format(totalPayment));
+      }//end of for loop
+    System.out.print("Do you want another loan? ");//Prompt for another loan 
+    another=again.nextLine();// use the again scanner object to grab the user's nextLine
+      //end of do-while
+       }while (another.equalsIgnoreCase("Yes") || another.equalsIgnoreCase("Y") );// make sure to another.equals not another==
+    
+      }//end of main method
+}//end of class
