@@ -22,16 +22,21 @@ public class VowelCheckerDBH
    
    for(int i = 0; i < userString.length(); i++)
 
-   if(userString.charAt(i) > 'a' && userString.charAt(i) < 'z' || userString.charAt(i) > 'A' && userString.charAt(i) < 'Z')
+   if(userString.charAt(i) > 'a' && userString.charAt(i) < 'z' || userString.charAt(i) > 'A' && userString.charAt(i) < 'Z' || userString.charAt(i) == ' ')
    {
-      if (userString.charAt(i).equalsIgnoreCase('A') ||userString.charAt(i).equalsIgnoreCase('E') || userString.charAt(i).equalsIgnoreCase('I')
-                                                                      || userString.charAt(i).equalsIgnoreCase('O') || userString.charAt(i).equalsIgnoreCase('U'))
+      char letter = userString.charAt(i);
+      if (letter == 'A' || letter == 'E' || letter == 'I' || letter == 'O' || letter == 'U' || 
+                     letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u')
    
          countV++;
-      else
+      else if (userString.charAt(i) > 'a' && userString.charAt(i) < 'z' || userString.charAt(i) > 'A' && userString.charAt(i) < 'Z')
          countC++;
    }
    else
    System.out.print("Invalid input");
+   
+   System.out.println("The number of vowels is: " + countV);
+   System.out.print("The number of consonants is: " + countC);
    }
 }
+      
