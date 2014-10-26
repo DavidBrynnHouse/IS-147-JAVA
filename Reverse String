@@ -1,0 +1,20 @@
+/*Write a program that prompts the user to enter a string and
+displays the string in reverse order
+David House
+IS 147*/
+import java.util.Scanner;
+
+public class ReverseStringDBH
+{
+   public static void main(String[] args)
+   {
+      Scanner scan = new Scanner(System.in);
+      System.out.print("Enter a String to be reversed: ");
+      String userString = scan.nextLine();
+      
+      System.out.print("Your String backwards is ");
+      for (int i = userString.length() - 1; i >= 0; i--)
+         System.out.print(userString.charAt(i));
+         
+   }
+}   
