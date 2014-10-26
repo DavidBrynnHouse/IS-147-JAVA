@@ -1,0 +1,16 @@
+/*Use a while loop to find the largest integer
+n such that n^3 is less than 12,000
+David House
+IS 147*/
+public class LessThanTwelveThousandDBH
+{
+   public static void main(String[] args)
+   {
+      int n = 0;
+      while(Math.pow(n, 3) < 12000)
+      {
+         n++;
+      }
+         System.out.print("The largest integer whose cube is less than 12,000 is: " + (n - 1));
+   }
+}
