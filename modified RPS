@@ -1,0 +1,70 @@
+/*Programming Exercise  3.17 gives a program that
+plays the scissor-rock-paper game. Revise the program to let the user continu-
+ously play until either the user or the computer wins more than two times than its
+opponent
+David House
+IS 147*/
+import java.util.*;
+
+public class RPSPartTwoDBH
+{
+   public static void main(String[] args)
+   {
+      int userCount = 0;
+      int compCount = 0;
+      while (Math.abs(userCount - compCount) < 2)
+      {
+         Scanner scan = new Scanner(System.in);
+         Random rand = new Random();
+         
+         System.out.print("Choose Rock (1), Paper (2), or Scissors(3): ");
+         int userChoice = scan.nextInt();
+         int compChoice = rand.nextInt(3) + 1;
+         
+         if (compChoice == 1)
+         {
+          switch (userChoice)
+          {
+            case 1: System.out.println("its a tie!");
+               break;
+            case 2: System.out.println("You win!");
+                     userCount++;
+               break;
+            case 3: System.out.println("You lose!");
+                     compCount++;
+          } 
+         } 
+         if (compChoice == 2)
+         {
+          switch (userChoice)
+          {
+            case 2: System.out.println("its a tie!");
+               break;
+            case 3: System.out.println("You win!");
+                     userCount++;
+               break;
+            case 1: System.out.println("You lose!");
+                     compCount++;
+          }
+         }
+         if (compChoice == 3)
+         {
+          switch (userChoice)
+          {
+            case 3: System.out.println("its a tie!");
+               break;
+            case 1: System.out.println("You win!");
+                     userCount++;
+               break;
+            case 2: System.out.println("You lose!");
+                     compCount++;
+          }
+         }
+         
+      }
+         if(userCount < compCount)
+            System.out.print("Your score was: " + userCount + " The computers score was: " + compCount + " Better luck next Time");
+         if(userCount > compCount)
+            System.out.print("Your score was: " + userCount + " The computers score was: " + compCount + " Good Job!");      
+   }
+}   
