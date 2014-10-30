@@ -1,0 +1,55 @@
+/*You will write a program that asks a user how many problems they have
+* -
+*In your prompt
+*instruct them to enter a number between 3 and 99.
+*(Check to make sure they comply.)
+*You will then print a line for each of their problems finishing off with a line saying they
+*have no problems.
+*You will then ask
+*if they have any more problems to start the process again.
+*Finish your program with a pleasant output line to let the user know he/she is done.
+*David House
+*IS147*/
+import java.util.Scanner;
+
+public class ProblemsDBH
+{
+   public static void main(String[] args)
+   {
+      Scanner scan = new Scanner(System.in);
+      Scanner scan2 = new Scanner(System.in);
+      int problems;
+      String moreProblems = "yes";
+      
+      System.out.println("Do you have problems?(Yes/No) ");
+      moreProblems = scan.nextLine();
+      
+      while (moreProblems.equalsIgnoreCase("yes") || moreProblems.equalsIgnoreCase("y") || moreProblems.equalsIgnoreCase("yea"))
+      {
+      System.out.print("Enter your number of problems(3 to 99): ");
+      problems = scan.nextInt();
+      
+      while(problems < 3 || problems >= 100)
+      {
+         System.out.print("You did not enter a valid number of Problems Please try again(3 to 99): ");
+         problems = scan.nextInt();  
+      }
+      while (problems > 0 && problems < 100)
+      {
+         if (problems > 1)
+         {
+         System.out.println("You have " + problems + " problems but Java ain't one");
+         problems--;
+         }
+         else
+         {
+         System.out.println("You have " + problems + " problem but Java ain't one");
+         problems--;
+         }
+      }
+      System.out.println("You have no problems");
+      System.out.println("Do you want to enter more problems? ");
+      moreProblems = scan2.nextLine();
+      }
+      System.out.print("I'm glad you are OK");
+   }
