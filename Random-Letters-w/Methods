@@ -1,0 +1,52 @@
+/*
+Use the methods in RandomCharacter in Listing
+6.10 to print 100 uppercase letters and then
+100 single digits, printing ten per line.
+David House
+IS 147
+*/
+
+
+public class RandomLettersDBH
+{
+   public static char getRandomCharacter(char ch1, char ch2)
+   {
+      return (char)(ch1 + Math.random() * (ch2 - ch1 + 1));
+   }
+   //*************************************************
+   public static char getRandomLowerCaseLetter() 
+   {
+      return getRandomCharacter('a', 'z');
+   }
+   //*************************************************
+   public static char getRandomUpperCaseLetter() 
+   {
+      return getRandomCharacter('A', 'Z');
+   }
+   //*************************************************
+   public static void main(String[] args)
+   {
+      char lowerCase;
+      char upperCase;
+      
+      for (int j = 1; j <= 10; j++)
+      {
+         for (int i = 1; i <= 10; i++)
+         {
+            lowerCase = getRandomLowerCaseLetter();
+            System.out.print(lowerCase);
+         }
+            System.out.println();
+      }
+    
+      for (int j = 1; j <= 10; j++)
+      {
+         for (int i = 1; i <= 10; i++)
+         {
+            upperCase = getRandomUpperCaseLetter();
+            System.out.print(upperCase);
+         }
+            System.out.println();
+      }
+   }    
+}
