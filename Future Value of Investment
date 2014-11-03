@@ -1,0 +1,56 @@
+/*
+ Write a method that
+computes future investment value at a given interest rate for a specified number
+of years. The future investment is determined using the formula in Programming
+Exercise 2.21.
+Use the following method header:
+public static double
+futureInvestmentValue(
+double
+investmentAmount,
+double
+monthlyInterestRate,
+int
+years)
+For example,
+futureInvestmentValue(10000, 0.05/12, 5)
+returns
+12833.59
+.
+Write a test program that prompts the user to enter the investment amount (e.g.,
+1000) and the interest rate (e.g., 9%) and prints a table that displays 
+future value
+for the years from 1 to 30.
+David House
+IS147
+*/
+import java.util.Scanner;
+import java.text.NumberFormat;
+
+public class FutureInvestmentDBH
+{
+   public static double futureInvestmentValue(double investmentAmount, double annualInterestRate, int years)
+   {
+      double futureValue = investmentAmount * Math.pow((1 + (annualInterestRate / 12)), (years * 12));
+      return futureValue;
+   }
+   public static void main(String[] args)
+   {
+      Scanner scan = new Scanner(System.in);
+      Scanner scan1 = new Scanner(System.in);
+      NumberFormat fmt = NumberFormat.getCurrencyInstance();
+      
+      System.out.print("Enter the initial investment amount: ");
+      double investmentAmount = scan.nextDouble();
+      
+      System.out.print("Enter the Annual interest rate (as a decimal): ");
+      double annualInterestRate = scan.nextDouble();
+      
+      System.out.println("Years \t Future Investment Value");
+      System.out.println("________________________________");
+      
+      int years;
+      for(years = 1; years <= 30; years++)
+         System.out.println(years + "\t " + fmt.format(futureInvestmentValue(investmentAmount, annualInterestRate, years)));
+   }
+}
