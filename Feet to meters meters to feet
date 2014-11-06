@@ -1,0 +1,33 @@
+/*This program creates a table showing conversions between feet and meters
+David House
+IS 147*/
+import java.text.DecimalFormat;
+
+public class FeetToMetersMethodDBH
+{
+   public static double footToMeter(double foot)
+   {
+      return 0.305 * foot;
+   }
+   public static double meterToFoot(double meter)
+   {
+      return 3.279 * meter;
+   }
+   public static void main(String[] args)
+   {
+      DecimalFormat fmt = new DecimalFormat("0.000");
+      int feet = 1;
+      int meter = 20;
+      
+      System.out.println("Feet\t Meters\t |\t Meters\t Feet");
+      /*while(feet <= 10 && meter <= 65)
+      {
+         System.out.println(feet + "\t " + fmt.format(footToMeter(feet)) + "\t" + " |" + "\t " + meter + "\t " + fmt.format(meterToFoot(meter)));
+         feet++;
+         meter += 5;
+      }*/
+      for (int count = 1; count <= 10; count++, feet++, meter += 5)
+      System.out.println(feet + "\t " + fmt.format(footToMeter(feet)) + "\t" + " |" + "\t " + meter + "\t " + fmt.format(meterToFoot(meter)));
+
+   }
+}
