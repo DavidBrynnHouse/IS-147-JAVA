@@ -1,0 +1,27 @@
+/*
+Write a method that con-
+verts milliseconds to hours, minutes, and second
+David House
+IS 147
+*/
+import java.util.Scanner;
+
+public class ConvertMillisecondsToHoursMinutesSecondsDBH
+{
+   public static void main(String[] args)
+   {
+      Scanner scan = new Scanner(System.in);
+      
+      System.out.print("Enter the number of milliseconds: ");
+      long milli = scan.nextInt();
+      
+      System.out.print(convertMillis(milli));
+   }
+   public static String convertMillis(long millis)
+   {
+      long hours = millis / 3600000;
+      long minutes = (millis / 60000) % 60;
+      long seconds = (millis / 1000) % 60;
+      return hours + ":" + minutes + ":" + seconds;
+   }
+}
