@@ -1,0 +1,43 @@
+/*Prints a histogram using 100 values
+David House
+IS147*/
+import java.util.Scanner;
+
+public class HistogramDBH
+{
+   public static void main(String[] args)
+   {
+   Scanner scan = new Scanner(System.in);
+   int[] ranges = new int[10];
+   int box; // index value for ranges
+   int userVal;
+   
+   System.out.println("Enter integers (1 - 100) to create a histogram. Enter any other value to end ");
+   userVal = scan.nextInt();
+   
+   while (userVal != 0)//user input
+   {
+      if (userVal >=1 && userVal <= 100)
+      {
+         box = (userVal - 1) / 10;
+         ranges[box]++;
+         userVal = scan.nextInt();
+      }
+      else
+      {
+         System.out.println("Invalid input. Please enter an integer between 1 and 100");
+         userVal = scan.nextInt();
+      }
+   }
+   box = 0;
+   for (int i = 0; i < 10; i++)
+   {
+      System.out.print((box + 1) + "-" + (box + 10) + "\t|");
+      for (int x = 0; x < ranges[i]; x++)
+         System.out.print("*");
+      System.out.println();
+      
+      box += 10;
+   }
+  }
+}
