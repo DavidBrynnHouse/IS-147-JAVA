@@ -1,0 +1,32 @@
+/*Finds the minimum value with a method
+David House
+IS 147*/
+import java.util.Scanner;
+
+public class MinValDBH
+{
+
+   public static void main(String[] args)
+   {
+      Scanner scan = new Scanner(System.in);
+      int[] array = new int[10];
+      
+      System.out.print("Enter ten numbers to find the min: ");
+      for(int j = 0; j < 10; j++)
+         array[j] = scan.nextInt();
+         
+      System.out.print("The smallest number is: " + min(array));
+   }
+   
+   public static int min(int[] array)//method for finding the minimum value
+   {
+   int min = array[0];
+      for (int i = 1; i < array.length; i++) 
+      {
+         if (array[i] < min) 
+            min = array[i];
+      }
+      return min;
+
+   }
+}
