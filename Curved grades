@@ -1,0 +1,41 @@
+/* This program asks the user to enter the number of grades, then enter the grades. The program then
+calculates a curve and provides the user with the final grades.
+David House
+IS 147*/
+import java.util.Scanner;
+
+public class CurvedGradesDBH
+{
+   public static void main(String[] args)
+   {
+      Scanner scan = new Scanner(System.in);
+      
+      System.out.print("Enter the number of scores: ");
+      int[] grades = new int[scan.nextInt()];
+      
+      System.out.print("Enter the Scores: ");
+      for(int j = 0; j < grades.length; j++)
+         grades[j] = scan.nextInt();
+         
+         int max = grades[0];
+         for (int i = 1; i < grades.length; i++) //Finds the max value
+         {
+         if (grades[i] > max) 
+            max = grades[i];
+         }
+
+         for (int k = 0; k < grades.length; k++)
+         {
+         if (grades[k] >= max -10)
+         System.out.println("Student " + k + " score is " + grades[k] + " is A");
+         else if (grades[k] >= max -20)
+         System.out.println("Student " + k + " score is " + grades[k] + " is B");
+         else if (grades[k] >= max - 30)
+         System.out.println("Student " + k + " score is " + grades[k] + " is C");
+         else if (grades[k] >= max - 40)
+         System.out.println("Student " + k + " score is " + grades[k] + " is D");
+         else
+         System.out.println("Student " + k + " score is " + grades[k] + " is F");
+         }
+   }
+}
