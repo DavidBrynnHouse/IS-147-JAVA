@@ -1,0 +1,39 @@
+/*The
+reverse
+method in Section  7.7 reverses an array by
+copying it to a new array. Rewrite the method that 
+reverses the array passed in
+the argument and returns this array. Write a test program 
+that prompts the user to enter ten numbers, invokes the method to reverse the numbers, and displays the
+numbers.
+David House
+IS147*/
+import java.util.Scanner;
+
+public class ReverseArrayDBH
+{
+   public static void main(String[] args)
+   {
+    Scanner scan = new Scanner(System.in);
+    int[] userList = new int[10];
+    
+    System.out.print("Enter 10 integers with spaces to be reversed in an array ");
+      for (int k = 0; k < 10; k++)
+         userList[k] = scan.nextInt();
+ 
+         System.out.print("The array in reverse is ");
+         for (int e: reverse(userList))
+            System.out.print(e + " ");
+   }
+   public static int[] reverse(int[] list)
+   {
+      int l;
+      for (int i = 0, j = list.length - 1; i < list.length / 2; i++, j--)
+      {
+         l = list[j];
+         list[j] = list[i];
+         list[i] = l;
+      }
+      return list;
+   }
+}
